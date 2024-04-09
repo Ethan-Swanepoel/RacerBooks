@@ -1,0 +1,47 @@
+﻿@model             LoginModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Login</h1>
+
+<h4>Welcome Login</h4>
+<h5>@ViewBag.Error</h5>
+<h5>@TempData["LoginFirst"]</h5>
+<hr />
+<div class="row">
+    <div class=" col-md-4 ">
+        <form asp-action="Login">
+
+            <div class="form-group">
+                <label for="Email" class="control-label">Email</label>
+                <input name="Email" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Password" class="control-label">Password</label>
+                <input name="Password" class="form-control" />
+            </div>
+
+            <div class="form-group">
+
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+
+        </form>
+
+
+
+
+
+    </div>
+</div>
+
+@*
+@section Scripts{
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptPartial");
+    }
+}*@

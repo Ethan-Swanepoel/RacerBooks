@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Cart>
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2>Checkout</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ItemCodeNavigation.ItemName</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Quantity * item.ItemCodeNavigation.ItemPrice)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-action="CompleteCheckout">
+    <button type="submit" class="btn btn-primary">Complete Checkout</button>
+</form>
